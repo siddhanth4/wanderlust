@@ -10,8 +10,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 
-const Listing = require("./models/listing");
-const Review = require("./models/review");
+
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -92,7 +91,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.get("/", (req, res) => {
-    res.render("./listings/index.ejs", {allListings});
+    res.render("./listings/index.ejs");
 });
 
 app.use("/listings", listingRouter);
