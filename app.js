@@ -86,10 +86,6 @@ app.use((req, res, next) => {
     next();
 });
 
-//Routes
-app.get("/", (req, res) => {
-    
-});
 
 app.use("/listings", listingRouter);
 app.use("/", reviewRouter);
