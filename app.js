@@ -9,9 +9,6 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
-
-
-
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
@@ -91,7 +88,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.get("/", (req, res) => {
-    res.render("./listings/index.ejs");
+    
 });
 
 app.use("/listings", listingRouter);
