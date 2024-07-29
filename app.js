@@ -9,6 +9,10 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
+
+const Listing = require("./models/listing");
+const Review = require("./models/review");
+
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
