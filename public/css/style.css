@@ -4,23 +4,73 @@
     flex-direction: column;
     min-height: 100vh;
 } 
+
 .container{
     flex:1;
 }
 
 /* NAVBAR */
-.navbar{
+.navbar {
     height: 5rem;
     background-color: rgb(226, 221, 221);
+    z-index: 1000; /* Ensure the navbar stays on top */
 }
-.fa-compass{
+
+.fa-compass {
     color: #d72632;
     font-size: 2rem;
 }
-.nav-link{
+
+.nav-link {
     color: #222222 !important;
     font-size: 1.3rem !important;
 }
+
+/* Ensure dropdowns are placed properly and don't collide */
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Ensure dropdown appears just below the navbar */
+    left: 0;
+    right: 0;
+    z-index: 1001;
+}
+
+.btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem;
+}
+
+.btn-search:hover {
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+    .navbar-nav .dropdown-menu {
+        position: static; /* Adjust dropdown positioning on smaller screens */
+    }
+
+    .search-inp {
+        width: 100%; /* Ensure search input spans full width on small screens */
+    }
+
+    .btn-search {
+        width: 100%;
+        margin-top: 0.5rem; /* Add space between search input and button */
+    }
+}
+
 
 /* FOOTER */
 .f-info-links{
@@ -107,3 +157,10 @@
     height: 380px;
     width: 85vh;
  }
+
+
+
+
+
+
+
