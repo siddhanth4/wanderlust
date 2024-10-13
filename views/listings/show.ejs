@@ -23,7 +23,7 @@
     </div>
     <% if(currUser && listing.owner._id.equals(currUser._id)) { %> 
     <div class="btns">
-        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark mb-3 col-1 offset-3 add-btn"> Edit </a> <br><br>
+        <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark mb-3 col-2 offset-3 add-btn"> Edit </a> <br><br>
         <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
             <button class="btn btn-dark mb-3 offset-4">Delete</button>
         </form>
@@ -65,12 +65,12 @@
         <div class="row">
         <p><b>All Reviews</b></p>
         <% listing.reviews.forEach(review => { %>
-            <div class="card col-5 ms-3 mb-3">
+            <div class="card col-12 col-md-6 col-lg-4 mb-3">
                 <div class="card-body">
                     <p class="card-title"> <i> @<%= review.author.username %></i> </p>
                     <p class="starability-result card-text" data-rating="<%= review.rating %>"> </p> 
-                    <p class="card-text mb-3"> <%= review.comment %> </p> 
-                </div>
+                    <p class="card-text"> <%= review.comment %> </p> 
+                </div> <br>
                 <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
                     <button class="btn btn-sm btn-dark">Delete</button>
                 </form>
@@ -81,10 +81,10 @@
         
 
     </div>
-    <div class="col-8 offset-3 mb-3">
+    <div class="col-12 offset-0 col-md-8 offset-md-3 mb-3">
         <h3>Where you'll be</h3>
         <div id="map"></div>
-    </div>
+    </div>    
 </div>
 
 <script src="/js/map.js"></script>
