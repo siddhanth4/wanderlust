@@ -7,14 +7,26 @@ const listingSchema = new Schema({
     type: String,
     required: true,
   },
-  description: String,
-  image: {
-     url: String,
-     filename: String,
+  description: {
+    type: String,
   },
-  price: Number,
-  location: String,
-  country: String,
+  image: {
+    filename: {
+      type: String,
+    },
+    url: {
+      type: String,
+    },
+  },
+  price: {
+    type: Number,
+  },
+  location: {
+    type: String,
+  },
+  country: {
+    type: String,
+  },
   reviews: [
     {
       type: Schema.Types.ObjectId,
@@ -35,16 +47,17 @@ const listingSchema = new Schema({
       type: [Number],
       required: true,
     },
-  }
+  },
+  category: {
+    type: String,
+  },
 });
 
-//POST Mongoose Middleware
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
-    await Review.deleteMany({_id: {$in: listing.reviews}});
+    await Review.deleteMany({ _id: { $in: listing.reviews } });
   }
 });
-  
 
 const Listing = mongoose.model("Listing", listingSchema);
 module.exports = Listing;
