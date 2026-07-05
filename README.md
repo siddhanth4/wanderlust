@@ -2,7 +2,7 @@
 
 **Wanderlust** is a web application that allows users to browse, review, and manage travel destinations and listings. It integrates maps for location-based listings and supports CRUD operations for both users and listings.
 
-## Check out Live Demo: https://wanderlust-rm6j.onrender.com/listings
+## Check out Live Demo: https://wanderlust-navy-six.vercel.app/listings
 
 ## Features
 - User authentication and authorization.
